@@ -1,0 +1,104 @@
+/*
+Name: Abigail Lim
+File:
+Date Created: 2024-09-09
+Date Updated: 2024-09-21
+Purpose: Style sheet for Homework 1.
+*/
+
+body {
+    text-align: left;
+    color: rgb(0,0,0);
+    font-family: Georgia, serif;
+    font-weight: normal;
+    background-color: rgb(150, 208, 244);
+}
+
+h1 {
+    text-align: center;
+    color: rgb(0,0,0);
+    font-family: Georgia, serif;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(0,0,0);
+    font-family: Georgia, serif;
+    font-weight: bold;
+}
+
+table.head, tr.head, td.head {
+  width: 100%;
+  table-layout: fixed;
+  text-align: center;
+  opacity: 1;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  background-color: rgb(150,208,244);
+}
+
+td.head2 {
+  text-align: center;
+  color: rgb(0,0,0);
+  font-family: Georgia, serif;
+  font-weight: bold;
+}
+
+td.date {
+  text-align: right;
+  vertical-align: text-bottom;
+  color: rgb(0,0,0);
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+table.form, tr.form, td.form {
+  text-align: left;
+  vertical-align: bottom;
+  width: 100%;
+  opacity: 1;
+  font-family: Georgia, serif;
+  color: rgb(0,0,0);
+  background-color: rgb(209,207,223);
+  border-radius: 25px;
+  padding: 20px; 
+  height: fit-content;
+}
+
+#sub {
+  height: 75px;
+  width: 150px;
+}
+
+#res {
+  height: 75px;
+  width: 250px;
+}
+
+/* Textbox Enlargement for Symptom Descriptor */
+
+#sym {
+  height: 150px;
+  width: 300px;
+}
+
+footer {
+  display: block;
+  color: rgb(0,0,0);
+  font-family: Georgia, serif;
+  font-weight: normal;
+  background-color: rgb(209,207,223);
+  border-radius: 25px;
+  padding: 20px; 
+  width: 100%;
+  height: fit-content;  
+}
+
+/* Photo for Thank you page */
+
+.nurses {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

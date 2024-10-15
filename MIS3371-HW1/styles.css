@@ -76,13 +76,6 @@ table.form, tr.form, td.form {
   width: 250px;
 }
 
-/* Textbox Enlargement for Symptom Descriptor */
-
-#sym {
-  height: 150px;
-  width: 300px;
-}
-
 footer {
   display: block;
   color: rgb(0,0,0);

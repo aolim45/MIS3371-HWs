@@ -12,3 +12,5 @@ window.onload = getdate() {
 };
 
 /* Retrieves user's input on health slider */
+
+/*Ensures passwords match & fulfill requirements */

@@ -7,5 +7,3 @@ Purpose: To validate & redisplay all of the user's inputs.
 */
 
 /* Grabs date from user system */
-document.getElementById("currentDate").innerHTML = new Date(),toLocaleDateString();
-console.log(currentDate);

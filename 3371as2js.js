@@ -9,6 +9,6 @@ Purpose: To validate & redisplay all of the user's inputs.
 /* Grabs date from user system */
 window.onload = getdate() {
   document.getElementById("currentDate").innerHTML = new Date().toLocaleDateString();
-}
+};
 
 /* Retrieves user's input on health slider */

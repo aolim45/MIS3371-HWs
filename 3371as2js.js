@@ -12,5 +12,37 @@ window.onload = function getdate() {
 };
 
 /* Retrieves user's input on health slider */
+function updateHealthScore(value) {
+  document.getElementById('healthscale').textContent = value;
+}
 
 /*Ensures passwords match & fulfill requirements */
+function passwordentry() 
+    {
+    var passwordoutput;
+    var passwordinput = document.getElementById("passwordbox1").value;
+    console.log(passwordinput);
+
+    // Password length checker
+    if(passwordinput.length < 8) {
+        passwordoutput = "Password length must be 8 or more";
+        error_flag = 1;
+    }
+    if(passwordinput.length > 30) {
+        passwordoutput = "Password length needs to 30 or less";
+        error_flag = 1;
+    }
+    document.getElementById("password_message5").innerHTML = passwordoutput;
+    // No special characters /[!\@#\$%&*\-_\\.+\(\)]/
+   if(passwordinput.search(/[!@#$%^&*()?<>.`;:'"`]/)>0 ) {   
+    passwordoutput = "No special characters allowed. Use only letters, numbers, and an underscore or dash";
+    error_flag = 1;
+    document.getElementById("password_message4").innerHTML = passwordoutput;
+   }
+
+   // Prevents spaces in password
+   if(passwordinput.search(/[]/)>0 ) {   
+    passwordoutput = "No spaces allowed";
+    error_flag = 1;
+    } 
+  }

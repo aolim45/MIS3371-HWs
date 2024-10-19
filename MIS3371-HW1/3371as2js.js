@@ -75,7 +75,7 @@ source: https://www.guinnessworldrecords.com/news/2023/12/oldest-person-ever-was
 function validateSSN() {
     const ssn = document.getElementById("ssn").value;
     // Regex pattern for ssn
-    const ssnR = /^[0-9]{3}-?[0-9]{2}-?[0,9]{4}$/;
+    const ssnR = /^[0-9]{3}-?[0-9]{2}-?[0-9]{4}$/;
 
     // SSN formatter & masker (work in progress)
     //const formattedSSN = ssn.slice(0,3) + "-" + ssn.slice (3,5) + "-" + ssn.slice (5,9);
@@ -113,7 +113,7 @@ function validateAdd1() {
 
 // Zip code validator
 function validateZip() {
-    const zipInput = document.getElementById(zip);
+    const zipInput = document.getElementById("zip");
     let zip = zipInput.value.replace(/[^\d-]/g, "");
     // Code aboves removes any non-digit characters.
 
@@ -128,7 +128,7 @@ function validateZip() {
     // Code above removes any extra digits after the first 5.
     
     zipInput.value = zip;
-        document.getElementById(ziper).innerHTML = "";
+        document.getElementById("ziper").innerHTML = "";
         return true;
 }
 
@@ -139,7 +139,7 @@ function validateEmail() {
     var emailR = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     // Lowercase converter
-    email = email.toLowercase();
+    email = email.toLowerCase();
 
     // Shows typed e-mail in lowercase
     document.getElementById("email").value = email;
@@ -155,14 +155,14 @@ function validateEmail() {
         return false;
     }
     else {
-        document.getElementById(emailer).innerHTML = "";
+        document.getElementById("emailer").innerHTML = "";
         return true;
     }
 }
 
 // Phone number validator
 function validateTel() {
-    const teleInput = document.getElementById(tel);
+    const teleInput = document.getElementById("tel");
     const tele = teleInput.value.replace(/\D/g, "");
     // Code above removes all non-digits.
 
@@ -189,7 +189,7 @@ function validateUser() {
 }
 
 // Lowercase converter
-user = user.toLowercase();
+user = user.toLowerCase();
 
 // Shows typed username in lowercase
 document.getElementById("user").value = user;

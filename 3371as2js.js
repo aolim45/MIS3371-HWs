@@ -7,7 +7,7 @@ Purpose: To validate & redisplay all of the user's inputs.
 */
 
 /* Grabs date from user system */
-window.onload = function getdate() {
+window.onload = function() {
   document.getElementById("currentDate").innerHTML = new Date().toLocaleDateString();
 };
 

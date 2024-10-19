@@ -64,9 +64,12 @@
                                 maxlength="30"
                                 size="30"
                                 placeholder="Required"
+				pattern="[a-zA-Z']{1,30}"
+				onblur="validateFname()"
                                 autofocus
                                 required
                         >
+		    <span class="error" id="fnameer"></span>
             </td>
             
             <td>
@@ -77,8 +80,11 @@
                             maxlength="1"
                             size="1"
                             placeholder="O"
+			    pattern="[a-zA-Z']{0,1}"
+			    onblur="validateMini()"
                             optional
                     >
+		<span class="error" id="minier"></span>
             </td>
             
             <td>
@@ -89,9 +95,12 @@
                                 minlength="1"
                                 maxlength="30"
                                 size="30"
+				pattern="[a-zA-Z']{1,30}"
+				onblur="validateLname()"
                                 placeholder="Required"
                                 required
                         >
+		<span class="error" id="lnameer"></span>
             </td>
         </tr>
 
@@ -140,6 +149,7 @@
                             maxlength="11"
                             size="12"
                             placeholder="xxx-xx-xxxx"
+			    pattern="[0-9]{9}"
                             optional
                     >
             </td>

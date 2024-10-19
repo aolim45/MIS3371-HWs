@@ -151,9 +151,10 @@
                             maxlength="11"
                             size="12"
                             placeholder="xxx-xx-xxxx"
-			    pattern="[0-9]{9}"
+			    onblur="validateSSN()"
                             optional
                     >
+		<span class="error" id="SSNer"></span>
             </td>
         </tr>
 

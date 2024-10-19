@@ -12,7 +12,7 @@ window.onload = function() {
   }
 
 // Adds hyphens automatically for tel
-function addHyphen (element) {
+/*function addHyphen(element) {
     let ele = document.getElementById(element.id);
         ele = ele.value.split('-').join('');
         // Code above removes any dashes (-) mistakenly entered.
@@ -20,7 +20,7 @@ function addHyphen (element) {
     let finalVal = ele.replace(/(\d)(\d)(\d)(\d)(\d)(\d)(\d)(\d)(\d)(\d)/, 
     '$1$2$3-$4$5$6-$7$8$9$10')
         document.getElementById(element.id).value = finalVal;
-  }
+  }*/
   /* I did not write this code. Source: 
   https://stackoverflow.com/questions/56516668/automatically-add-hyphen-in-phone-number-e-g-111-111-1111
   */
@@ -163,7 +163,7 @@ function validateEmail() {
 // Phone number validator
 function validateTel() {
     const teleInput = document.getElementById("tel");
-    const tele = teleInput.value.replace(/\D/g, "");
+    const tel = telInput.value.replace(/\D/g, "");
     // Code above removes all non-digits.
 
     if (tele.length !== 0) {
@@ -171,8 +171,7 @@ function validateTel() {
         "Please enter a valid 10 digit phone number.";
     }
 
-    const formattedTel =
-    tel.slice(0,3) + "-" + tel.slice(3,6) + "-" + tel.slice(6,10)
+    const formattedTel = tel.slice(0,3) + "-" + tel.slice(3,6) + "-" + tel.slice(6,10);
     telInput.value = formattedTel;
     document.getElementById("teler").innerHTML = "";
     return true;
@@ -240,7 +239,6 @@ else {
     if(pw.length > 30) {
         errorMessage.push("Minimum password length is 30 characters.");  
     }
-    document.getElementById("password_message5").innerHTML = passwordoutput;
 
     // Checks for lowercase letters
     if (!pw.match(/[a-z]/)) {
@@ -291,32 +289,32 @@ function confirmPW() {
 }
 
 // Allows user to review their input by pressing "CHECK INPUT"
-function checkInput () {
+function checkInput() {
     var formcontent = document.getElementById("signin")
     var formoutput;
     var i;
-    formoutput = "<table class='output"><th colspan = '3'>Entered Information:</th>";
+    formoutput = "<table class='output'><th colspan = '3'>Entered Information:</th>";
     for (i = 0; i < formcontent.length; i++) {
         if (formcontent.elements[i].value != "") {
             datatype = formcontent.elements[i].type;
             switch (datatype) {
-                case "checkbox";
+                case "checkbox":
                 if (formcontent.elements[i].checked) {
                     formoutput = formoutput + "<tr><td align= right'>" + formcontent.elements[i].name + "</td>";
                     formoutput = formoutput + "<td class='outputdata'>&#x2713;</td></tr>";
                 }
                     break;
-                case "radio"
+                case "radio":
                 if (formcontent.elements[i].checked) {
                     formoutput = formoutput + "<tr><td align='right'>" + formcontent.elements[i].name + "</td>";
                     formoutput = formoutput + "<td class='outputdata'>" + formcontent.elements[i].value + "</td></tr>";
                 }
                     break;
-                case "button";
-                case "submit";
-                case "reset";
+                case "button":
+                case "submit":
+                case "reset":
                     break;
-                default;
+                default:
                     formoutput = formoutput + "<tr><td align='right'>" + formcontent.elements[i].name + "</td>";
                     formoutput = formoutput + "<td class='outputdata'>" + formcontent.elements[i].value + "</td></tr>";
             }

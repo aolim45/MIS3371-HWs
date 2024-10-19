@@ -13,7 +13,7 @@ window.onload = function() {
 
 /* Retrieves user's input on health slider */
 function showHealthScore(value) {
-  document.getElementById('healthscale').textContent = value;
+  document.getElementById("healthscale").textContent = value;
 }
 
 /*Ensures passwords match & fulfill requirements */

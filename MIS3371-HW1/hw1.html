@@ -52,7 +52,7 @@
 <form action="hw1-thankyou.html">
 
 <!-- Name -->
-<form>
+<form name="signin" id="signin">
     <table class="form">
         <tr class="form">
             <td>
@@ -70,7 +70,7 @@
                                 autofocus
                                 required
                         >
-		    <span class="error" id="fnameer"></span>
+		     <span class="error" style="color:rgb(255, 0, 0);font-weight:bold" id="fnameer"></span>
             </td>
             
             <td>
@@ -86,7 +86,7 @@
 			    onblur="validateMini()"
                             optional
                     >
-		<span class="error" id="minier"></span>
+		<span class="error" style="color:rgb(255, 0, 0);font-weight:bold" id="minier"></span>
             </td>
             
             <td>
@@ -98,12 +98,12 @@
                                 maxlength="30"
                                 size="30"
                                 title="Letters, dashes, and apostrophes only please."
-				pattern="[a-zA-Z']{1,30}"
-				onblur="validateLname()"
+				                pattern="[a-zA-Z']{1,30}"
+				                onblur="validateLname()"
                                 placeholder="Required"
                                 required
                         >
-		<span class="error" id="lnameer"></span>
+		<span class="error" style="color:rgb(255, 0, 0);font-weight:bold" id="lnameer"></span>
             </td>
         </tr>
 
@@ -143,7 +143,7 @@
 			    onblur="validateDOB()"
                             required
                     >
-		<span class="error" id="DOBer"></span>
+		<span class="error" style="color:rgb(255, 0, 0);font-weight:bold" id="DOBer"></span>
             </td>           
         
             <td>
@@ -152,15 +152,20 @@
                             id="ssn"
                             name="ssn"
                             minlength="9"
-                            maxlength="11"
-                            size="12"
+                            maxlength="9"
+                            size="11"
                             placeholder="xxx-xx-xxxx"
                             title="Numbers only please."
                             onblur="validateSSN()"
+                            onkeyup="addHyphen2(this)"
                             optional
                     >
-                <span class="error" id="SSNer"></span>
+                <span class="error" style="color:rgb(255, 0, 0);font-weight:bold" id="SSNer"></span>
             </td>
+        </tr>
+
+        <tr class="form">
+            <th colspan="3">Patient Address</th>
         </tr>
 
 <!-- Address -->
@@ -173,20 +178,17 @@
                             minlength="5"
                             maxlength="30"
                             size="35"
-                            title="Letters, numbers, periods, dashes, and apostrophes only please."
+                            title="Valid address please."
                             onblur="validateAdd1()"
                             required
                             placeholder="1234 Street"
                     >
                 <span class="error" id="add1er"></span>
             </td>
-
             <td>     </td>
             <td>     </td>
         </tr>
-
-
-
+    
         <tr class="form">
             <td>
                 <label for="add2">Address Line 2:</label>
@@ -199,11 +201,10 @@
                             optional
                     >
             </td>
-
             <td>     </td>
             <td>     </td>
         </tr>
-    
+
         <tr class="form">
             <td>
                 <label for="city">City:</label>
@@ -290,10 +291,15 @@
                             title="Five digits only please."
                             pattern="[0-9]{5}"
                             placeholder="00000"
+                            onblur="validateZip()"
                             required
                     >
-                <span class="error" id="ziper"></span>
+                <span class="error" style="color:rgb(255, 0, 0);font-weight:bold" id="ziper"></span>
             </td>
+        </tr>
+
+        <tr class="form">
+            <th colspan="3">Patient Contact Information</th>
         </tr>
 
 <!-- E-mail & Phone # -->
@@ -328,30 +334,32 @@
                             onblur="validateTel()"
                             required
                     >
-                <span class="error" id="teler"></span>
+                  <span class="error" style="color:rgb(255, 0, 0);font-weight:bold" id="emailer"></span>
+            </td>
+
+            <td>
+                <label for="tel">Phone Number:</label>
+                    <input type="text"
+                            id="tel"
+                            name="tel"
+                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                            minlength="10"
+                            size="12"
+                            placeholder="000-000-0000"
+                            title="Numbers only please."
+                            onblur="validateTel()"
+                            required
+                    >
+                <span class="error" style="color:rgb(255, 0, 0);font-weight:bold" id="teler"></span>
             </td>
 
             <td>     </td>
 
         </tr>
 
-<!-- Symptom descriptor -->
-    <tr class="form">
-        <td>
-            <label for="sym">Please describe your symptoms:</label>
-                <textarea
-                        id="sym"
-                        name="sym"
-                        rows="3"
-                        cols="50"
-                        minlength="1"
-                        maxlength="200"
-                        placeholder="Coughing, fever, etc."
-                        title="Summarize symptoms please."
-                        required
-                >
-                </textarea>
-        </td>
+        <tr class="form">
+            <th colspan="3">Patient Medical History</th>
+        </tr>
 
         <td class="form">
             <label for="hist">Check if you've have and/or had any of the following:</label>       
@@ -480,6 +488,10 @@
     </tr>
 
     <tr class="form">
+            <th colspan="3">Login Creation</th>
+        </tr>
+
+    <tr class="form">
         <td>
             <label for="user">Desired Username:</label>
                     <input type="text"
@@ -494,7 +506,7 @@
                             onblur="validateUser()"
                             oninvalid="alert('Username must be 5 characters.')"
                     >
-                <span class="error" id="userer"></span>
+                <span class="error" style="color:rgb(255, 0, 0);font-weight:bold" id="userer"></span>
         </td>
 
         <td>
@@ -514,7 +526,7 @@
                             onfocus="validatePW()"
                             oninvalid="alert('Password must be 8 or more characters.')"
                     >
-                <span class="error" id="PWer"></span>
+                <span class="error" style="color:rgb(255, 0, 0);font-weight:bold" id="pwer"></span>
         </td>
         <td>
             <label for="pwv">Verify Desired Password:</label>
@@ -533,7 +545,7 @@
                             required
                             oninvalid="alert('Passwords must match.')"
                     >
-                <span class="error" id="PWVer"></span>
+                <span class="error" style="color:rgb(255, 0, 0);font-weight:bold" id="pwver"></span>
         </td>
 </table>
 
@@ -545,11 +557,10 @@
 
 <input id="res" type="reset" value="CLEAR AND START OVER">
 
-<input id="check" type="button" value="check">
-
+<input id="che" type="button" value="CHECK INPUT" onclick="checkInput()">
 </center>
 
-<div class="PWmessage">
+<div class="pwmessage">
         <span id="msg1"></span> </br>
         <span id="msg2"></span> </br>
         <span id="msg3"></span> </br>
@@ -557,13 +568,13 @@
         <span id="msg5"></span> </br>
         <span id="msg6"></span> </br>
         <span id="msg7"></span> </br>
-        <span id="PWVer"></span> </br>
+        <span id="pwver"></span> </br>
 </div>
 
 <center>
         <p id="checkInput"></p>
 </center>
-
+	
 </form>
 
 </br>

@@ -56,7 +56,7 @@
     <table class="form">
         <tr class="form">
             <td>
-                <label for="fname">First Name:</label>
+                <<label for="fname">First Name:</label>
                         <input type="text"
                                 id="fname"
                                 name="fname"
@@ -412,7 +412,7 @@
                             min="0"
                             max="10"
                             required
-			    oninput="showHealthScore(value)"
+			    oninput="healthscale"
                     >
 		<div class="scale-score">Health level at: <span id="healthscale">5</span></div>
         </td>
@@ -533,17 +533,37 @@
                             required
                             oninvalid="alert('Passwords must match.')"
                     >
-                <span class="error" id="PWer"></span>
+                <span class="error" id="PWVer"></span>
         </td>
 </table>
+
 </br>
 
 <!-- Reset & Submit buttons -->
+<center>
 <input id="sub" type="submit" value="SUBMIT">
 
 <input id="res" type="reset" value="CLEAR AND START OVER">
 
 <input id="check" type="button" value="check">
+
+</center>
+
+<div class="PWmessage">
+        <span id="msg1"></span> </br>
+        <span id="msg2"></span> </br>
+        <span id="msg3"></span> </br>
+        <span id="msg4"></span> </br>
+        <span id="msg5"></span> </br>
+        <span id="msg6"></span> </br>
+        <span id="msg7"></span> </br>
+        <span id="PWVer"></span> </br>
+</div>
+
+<center>
+        <p id="checkInput"></p>
+</center>
+
 </form>
 
 </br>

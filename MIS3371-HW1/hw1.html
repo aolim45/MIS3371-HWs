@@ -64,6 +64,7 @@
                                 maxlength="30"
                                 size="30"
                                 placeholder="Required"
+                                title="Letters, dashes, and apostrophes only please."
 				pattern="[a-zA-Z']{1,30}"
 				onblur="validateFname()"
                                 autofocus
@@ -80,6 +81,7 @@
                             maxlength="1"
                             size="1"
                             placeholder="O"
+                            title="Letters only please."
 			    pattern="[a-zA-Z]{0,1}"
 			    onblur="validateMini()"
                             optional
@@ -95,6 +97,7 @@
                                 minlength="1"
                                 maxlength="30"
                                 size="30"
+                                title="Letters, dashes, and apostrophes only please."
 				pattern="[a-zA-Z']{1,30}"
 				onblur="validateLname()"
                                 placeholder="Required"
@@ -136,6 +139,7 @@
                             name="dob"
                             min="1865-01-01"
                             max="2024-10-19"
+                            title="Cannot be born in the future."
 			    onblur="validateDOB()"
                             required
                     >
@@ -151,10 +155,11 @@
                             maxlength="11"
                             size="12"
                             placeholder="xxx-xx-xxxx"
-			    onblur="validateSSN()"
+                            title="Numbers only please."
+                            onblur="validateSSN()"
                             optional
                     >
-		<span class="error" id="SSNer"></span>
+                <span class="error" id="SSNer"></span>
             </td>
         </tr>
 
@@ -168,9 +173,12 @@
                             minlength="5"
                             maxlength="30"
                             size="35"
+                            title="Letters, numbers, periods, dashes, and apostrophes only please."
+                            onblur="validateAdd1()"
                             required
                             placeholder="1234 Street"
                     >
+                <span class="error" id="add1er"></span>
             </td>
 
             <td>     </td>
@@ -205,6 +213,7 @@
                             minlength="1"
                             maxlength="30"
                             size="20"
+                            title="City please."
                             required
                     >
             </td>
@@ -278,10 +287,12 @@
                             minlength="5"
                             maxlength="5"
                             size="5"
+                            title="Five digits only please."
                             pattern="[0-9]{5}"
                             placeholder="00000"
                             required
                     >
+                <span class="error" id="ziper"></span>
             </td>
         </tr>
 
@@ -295,8 +306,12 @@
                             maxlength="40"
                             size="30"
                             placeholder="name@domain.tld"
+                            title="All letters should be lowercase please."
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,40}$"
+                            onblur="validateEmail()"
                             optional
                     >
+                <span class="error" id="emailer"></span>
             </td>
 
             <td>
@@ -305,12 +320,15 @@
                             id="tel"
                             name="tel"
                             pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
-                            minlength="10"
-                            maxlength="10"
+                            minlength="12"
+                            maxlength="12"
                             size="12"
-                            placeholder="No dashes please."
+                            placeholder="000-000-0000"
+                            title="Numbers only please."
+                            onblur="validateTel()"
                             required
                     >
+                <span class="error" id="teler"></span>
             </td>
 
             <td>     </td>
@@ -329,6 +347,7 @@
                         minlength="1"
                         maxlength="200"
                         placeholder="Coughing, fever, etc."
+                        title="Summarize symptoms please."
                         required
                 >
                 </textarea>
@@ -466,13 +485,16 @@
                     <input type="text"
                             id="user"
                             name="user"
-                            minlength="8"
-                            maxlength="30"
+                            minlength="5"
+                            maxlength="20"
                             size="20"
                             placeholder="Required"
                             required
-                            oninvalid="alert('Username must be 8 characters.')"
+                            title="Username must be 5 or more characters, but it cannot start with a number."
+                            onblur="validateUser()"
+                            oninvalid="alert('Username must be 5 characters.')"
                     >
+                <span class="error" id="userer"></span>
         </td>
 
         <td>
@@ -481,14 +503,18 @@
                             id="pw"
                             name="pw"
                             pattern=".{8,}"
-                            title="Password must be 8 or more characters."
+                            title="Password must be 8 or more characters and contain 1 number, 1 uppercase, 1 lowercase, and 1 special character ."
                             minlength="8"
                             maxlength="30"
                             size="20"
                             placeholder="Required"
                             required
+                            onblur="validatePW()"
+                            oninput="validatePW()"
+                            onfocus="validatePW()"
                             oninvalid="alert('Password must be 8 or more characters.')"
                     >
+                <span class="error" id="PWer"></span>
         </td>
         <td>
             <label for="pwv">Verify Desired Password:</label>
@@ -496,14 +522,18 @@
                             id="pwv"
                             name="pw"
                             pattern=".{8,}"
-                            title="Password must be 8 or more characters."
+                            title="Passwords must match."
                             minlength="8"
                             maxlength="30"
                             size="20"
                             placeholder="Required"
+                            onblur="confirmPW()"
+                            oninput="confirmPW()"
+                            onfocus="confirmPW()"
                             required
                             oninvalid="alert('Passwords must match.')"
                     >
+                <span class="error" id="PWer"></span>
         </td>
 </table>
 </br>
@@ -512,6 +542,8 @@
 <input id="sub" type="submit" value="SUBMIT">
 
 <input id="res" type="reset" value="CLEAR AND START OVER">
+
+<input id="check" type="button" value="check">
 </form>
 
 </br>

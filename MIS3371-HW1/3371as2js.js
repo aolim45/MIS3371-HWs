@@ -300,7 +300,7 @@ function checkInput() {
             switch (datatype) {
                 case "checkbox":
                 if (formcontent.elements[i].checked) {
-                    formoutput = formoutput + "<tr><td align= right'>" + formcontent.elements[i].name + "</td>";
+                    formoutput = formoutput + "<tr><td align= 'right'>" + formcontent.elements[i].name + "</td>";
                     formoutput = formoutput + "<td class='outputdata'>&#x2713;</td></tr>";
                 }
                     break;

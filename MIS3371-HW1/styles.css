@@ -2,8 +2,8 @@
 Name: Abigail Lim
 File:
 Date Created: 2024-09-09
-Date Updated: 2024-09-21
-Purpose: Style sheet for Homework 1.
+Date Updated: 2024-10-19
+Purpose: Style sheet for Homework 2.
 */
 
 body {
@@ -53,6 +53,8 @@ td.date {
   font-weight: bold;
 }
 
+
+/* CSS for the form part of webpage */
 table.form, tr.form, td.form {
   text-align: left;
   vertical-align: bottom;
@@ -62,18 +64,82 @@ table.form, tr.form, td.form {
   color: rgb(0,0,0);
   background-color: rgb(209,207,223);
   border-radius: 25px;
-  padding: 20px; 
-  height: fit-content;
+  padding: 20px;
 }
+
+th {
+  padding: 20px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*input[type="text"] {
+  display: block;
+  position: relative;
+}*/
+
+/*input[type="checkbox"], input[type="radio"] {
+  position: relative;
+  vertical-align: middle;
+}*/
 
 #sub, #che {
   height: 75px;
   width: 150px;
+  float: none;
 }
 
 #res {
   height: 75px;
   width: 250px;
+  float: none;
+}
+
+.error {
+  color: rgb(255, 0, 0);
+  font-size: 15px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+}
+
+.pwmessage {
+  background: transparent;
+  color: rgb(255, 0, 0);
+  font-size: 15px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  text-align: right;
+  position: relative;
+  padding: 20px;
+}
+
+#che {
+  margin-top: 10px;
+}
+
+table.output, tr.output, td.output {
+  text-align: left;
+  vertical-align: bottom;
+  width: 100%;
+  opacity: 1;
+  font-family: Georgia, serif;
+  color: rgb(0,0,0);
+  border-radius: 25px;
+  padding: 20px;
+  background-color: rgb(207, 223, 217);
+}
+
+td.output {
+  text-align: left;
+  vertical-align: bottom;
+  width: 100%;
+  opacity: 1;
+  font-family: Georgia, serif;
+  color: rgb(0,0,0);
+  border-radius: 25px;
+  padding: 20px;
+  background-color: rgb(207, 223, 217);
 }
 
 footer {
